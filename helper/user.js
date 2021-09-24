@@ -25,7 +25,7 @@ export async function updateActiveStatus(client,email_id,updateStatus) {
     console.log("successfully new password updated", result);
     return result;
 }
-// tokens for verify the account
+// tokens for verify the account activation
 
 export async function inserttokens(client, user) {
     const result = await client.db("bike_service").collection("tokens_a").insertOne(user);
