@@ -124,6 +124,7 @@ router
     const { password }= request.body;
     const id=request.params.id;
     const token=request.params.token;
+    if(token !==""){
     const client=await createConnection();
     const myForgetTokens=await gettoken(client,id);
     if(!myForgetTokens){
@@ -141,6 +142,9 @@ router
     }
 
 } 
+    }else{
+        response.send({message:"enter the field"})
+    }
   
 });
 
