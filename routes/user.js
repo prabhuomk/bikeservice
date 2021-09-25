@@ -176,7 +176,11 @@ router.route("/myservicebooking").post(auth,async (request,response)=>{
     const time= new Date();
     const serviceList= await bookService(client,{username:username,email_id:email_id,service_name:service_name,service_price:service_price,service_status:service,timestamp:time,Mode_Payment:Mode_Payment,Payment_id:Payment_id});
     const mail=  await sendEmail(email_id, "Service booked",
-    `Service details 1.Service Name:${service_name} 2.Service Price:${service_price} 3.Payment Mode:${Mode_Payment}
+    `Service details
+     1.Service Name:${service_name}
+     2.Service Price:${service_price} 
+     3.Payment Mode:${Mode_Payment}
+     4.Payment id:${Payment_id}
     Bring your Vehicle to our Service Station by Tomarrow morning 9:00AM,by PK's bike servicing`);
     response.send({message:"service got booked and further detail will be mailed to your email_id"} );
     
