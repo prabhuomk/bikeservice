@@ -124,7 +124,7 @@ router
     const { password }= request.body;
     const id=request.params.id;
     const token=request.params.token;
-    if(token !==""){
+    if(password !==""){
     const client=await createConnection();
     const myForgetTokens=await gettoken(client,id);
     if(!myForgetTokens){
