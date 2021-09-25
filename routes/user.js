@@ -179,7 +179,8 @@ router.route("/myservicebooking").post(auth,async (request,response)=>{
      2.Service Price:${service_price} 
      3.Payment Mode:${Mode_Payment}
      4.Payment id:${Payment_id}
-    Bring your Vehicle to our Service Station by Tomarrow morning 9:00AM,by PK's bike servicing`);
+    Bring your Vehicle to our Service Station by Tomorrow morning 9:00AM
+    by PK's BIKE SERVICING`);
     response.send({message:"service got booked and further detail will be mailed to your email_id"} );
     
 });

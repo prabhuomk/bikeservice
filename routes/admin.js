@@ -103,7 +103,8 @@ router.route("/serviceDone/:_id").post(auth,async(request,response)=>{
     const client= await createConnection();
     const check=await listOneService(client,_id);
     const usermail=check.email_id;
-    const mail=  await sendEmail(usermail, "your bike service done","collect your Vehicle from our Service Station by Tomarrow evening 6:00PM");
+    const mail=  await sendEmail(usermail, "your bike service done",`collect your Vehicle from our Service Station by Tomorrow evening 6:00PM
+    By PK"s BIKE SERVICING`);
     const deletelist= await serviceUpdate(client,_id);
     response.send({message:"mail has been send to customer "})
     
